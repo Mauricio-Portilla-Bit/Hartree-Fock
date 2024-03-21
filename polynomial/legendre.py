@@ -76,15 +76,11 @@ Zf = np.multiply(Z,f)
 #Create figure
 fig = plt.figure(figsize =(14, 9))
 ax = plt.axes(projection ='3d')
- 
+
 # Creating plot
 ax.plot_surface(Xf, Yf, Zf)
  
 # show plot
 plt.show()
-
-
-
-
 
 

@@ -1,6 +1,6 @@
 import numpy as np 
 import math 
-
+import matplotlib.pyplot as plt
 
 # Laguerre Function (n) 
 def Laguerre(n: int, x):
@@ -37,5 +37,14 @@ def Radial_Function(n: int, l: int, r):
     rho = 2*Z*r/(n*a)
     
     return c * np.multiply(np.multiply(np.exp(-rho/2), rho**(l)), Laguerre_Generalized(n + l, 2*l + 1, rho))
+a =  0.529 * 10 ** (-10)
+n = 2
+l = 1
+r = np.linspace(0,18*a,500)
+psi = -1*Radial_Function(n,l,r)
+plt.plot(r/a,(a**(1.5))*psi)
+plt.xlim([0,18])
+plt.ylim([-0.3,0.8])
+plt.show()
 
 
