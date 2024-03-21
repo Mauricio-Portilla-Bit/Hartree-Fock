@@ -60,14 +60,14 @@ def SH(l,m,th,ph):  #It returns the spherical harmonics, evaluated in the corres
     return Y
 #Important to note, theta is the angle with respect to the z axis ph is the azimuthal axis with respect to the x axis   
 
-
+#This is a polar representation of the spherical harmonics, so far, so good
 th = np.linspace(0,np.pi,100)
 ph = np.linspace(0,np.pi*2,100)
 [TH,PH] = np.meshgrid(th,ph)
 X = np.multiply(np.cos(PH),np.sin(TH))
 Y = np.multiply(np.sin(PH),np.sin(TH))
 Z = np.cos(TH)
-f = np.real(SH(2,1,TH,PH))
+f = np.real(SH(2,2,TH,PH))
 Xf = np.multiply(X,f)
 Yf = np.multiply(Y,f)
 Zf = np.multiply(Z,f)
@@ -84,7 +84,7 @@ ax.plot_surface(Xf, Yf, Zf)
 plt.show()
 
 
-#just a polar plot to check that everything is fine
+
 
 
 
