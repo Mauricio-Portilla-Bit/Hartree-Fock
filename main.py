@@ -1,5 +1,6 @@
 import numpy as np
-from polynomial.laguerre import laguerre
+import Polarplots as p
+import matplotlib.pyplot as plt
+from mpl_toolkits import mplot3d
 
-
-laguerre()
+p.Polarplots(4,1)

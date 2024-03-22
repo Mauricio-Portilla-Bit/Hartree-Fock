@@ -21,7 +21,6 @@ def Pl(n):      #Coeficients of a legendre polynomial
 def Polyval(c,x): #Evaluates a "Polynomial vector" in a given domain
     v = np.zeros(len(x))
     for i in range(len(c)):
-        print(c[i])
         v = v + c[i] * x**(i)
     return v
 #A little explanantion of what i mean with Polynomial vector : (function) f(x) = 1+x+x^2 -----> (asociated vector) [1,1,1]
@@ -42,10 +41,8 @@ def FAL(l,m,x): #It returns the associated legendre functions evaluated in the s
  return y
 
 def Polydiff(c,m):   #It calculates the mth order derivative of a given polynomial vector
-    print(len(c))
     for i in range(m):
         c = np.delete(c,0)
-        print(type(c))
         t = len(c)
         c = c*(np.arange(t)+1)
     return c
@@ -60,27 +57,5 @@ def SH(l,m,th,ph):  #It returns the spherical harmonics, evaluated in the corres
     return Y
 #Important to note, theta is the angle with respect to the z axis ph is the azimuthal axis with respect to the x axis   
 
-#This is a polar representation of the spherical harmonics, so far, so good
-th = np.linspace(0,np.pi,100)
-ph = np.linspace(0,np.pi*2,100)
-[TH,PH] = np.meshgrid(th,ph)
-X = np.multiply(np.cos(PH),np.sin(TH))
-Y = np.multiply(np.sin(PH),np.sin(TH))
-Z = np.cos(TH)
-f = np.real(SH(2,2,TH,PH))
-Xf = np.multiply(X,f)
-Yf = np.multiply(Y,f)
-Zf = np.multiply(Z,f)
-
-
-#Create figure
-fig = plt.figure(figsize =(14, 9))
-ax = plt.axes(projection ='3d')
-
-# Creating plot
-ax.plot_surface(Xf, Yf, Zf)
- 
-# show plot
-plt.show()
 
 
