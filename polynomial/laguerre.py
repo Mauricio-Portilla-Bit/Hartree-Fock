@@ -37,6 +37,7 @@ def Radial_Function(n: int, l: int, r):
     rho = 2*Z*r/(n*a)
     
     return c * np.multiply(np.multiply(np.exp(-rho/2), rho**(l)), Laguerre_Generalized(n + l, 2*l + 1, rho))
+
 a =  0.529 * 10 ** (-10)
 n = 2
 l = 1
